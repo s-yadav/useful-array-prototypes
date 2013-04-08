@@ -1,5 +1,5 @@
 /*
-	*arrayPrototype.js
+	*arrayPrototypes.js
 	*Author: Sudhanshu Yadav
 	*s-yadav.github.com
 	*Copyright (c) 2013 Sudhanshu Yadav.
@@ -105,4 +105,58 @@ Array.prototype.nthElm = function (arg) {
             return this;
         }
     }
+}
+
+/*
+intersection([,array]) function to get intersection of arrays
+one or more array can be passed as argument.
+*/
+Array.prototype.intersection = function () {
+    var arrayList = Array.prototype.slice.call(arguments),
+        finalArray = [];
+
+    arrayList.unshift(this);
+    if (arrayList.length == 1) {
+        finalArray = arrayList[0];
+    } else {
+        for (var j = 0; j < arrayList[0].length; j++) {
+            var elm = arrayList[0][j]
+            flag = 1;
+            for (var i = 1; i < arrayList.length; i++) {
+                if (arrayList[i].indexOf(elm) == -1) {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag == 1) {
+                finalArray.push(elm);
+            }
+
+        }
+    }
+    return finalArray;
+}
+
+/*
+union([,array]) function to get union of arrays
+one or more array can be passed as argument.
+*/
+Array.prototype.union = function () {
+    var arrayList = Array.prototype.slice.call(arguments),
+        finalArray = [];
+
+    arrayList.unshift(this);
+    var aryListln = arrayList.length;
+
+    for (var i = 0; i < aryListln; i++) {
+        var aryLn = arrayList[i].length;
+        for (var j = 0; j < aryLn; j++) {
+            var itm = arrayList[i][j];
+            if (finalArray.indexOf(itm) == -1) {
+                finalArray.push(itm);
+            }
+        }
+
+    }
+    return finalArray;
 }
