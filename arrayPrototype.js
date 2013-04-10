@@ -89,9 +89,6 @@ Array.prototype.nthElm = function (arg) {
             arg = arg.replace(/([0-9])n/g, function ($0, $1) {
                 return $1 ? $1 + '*n' : $0;
             });
-            console.log(arg)
-
-
             for (var n = 0; n < ln; n++) {
                 var index = eval(arg);
                 if (index > ln - 1) {
