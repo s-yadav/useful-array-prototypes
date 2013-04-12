@@ -157,3 +157,17 @@ Array.prototype.union = function () {
     }
     return finalArray;
 }
+
+/*
+.shuffle() function to shuffle the elements of array
+*/
+Array.prototype.shuffle = function () {
+    for (var i = 1 ; i < this.length; i++) {
+        var j = Math.floor(Math.random() *(i+1)),
+        tmp = this[i];
+        this[i] = this[j];
+        this[j] = tmp;
+    }
+
+    return this;
+}
