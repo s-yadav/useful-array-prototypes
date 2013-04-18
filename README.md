@@ -1,4 +1,4 @@
 useful-array-prototypes
 =======================
 
-This repository contains some useful prototypes which native javascript dont provide or have some perfomance gain over native javascript functionality.
+This repository contains some useful prototypes which native JavaScript don’t provide or have some performance gain over native JavaScript functionality.
