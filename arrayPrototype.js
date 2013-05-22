@@ -17,7 +17,7 @@ Array.prototype.arrayIndex = function (data) {
     var index = -1;
     for (var i = 0; i < this.length; i++) {
 
-        if (this[i] == data) {
+        if (this[i] === data) {
 
             index = i;
             break;
@@ -36,7 +36,7 @@ Array.prototype.arrayIndexCI = function (data) {
     var index = -1;
     for (var i = 0; i < this.length; i++) {
 
-        if (this[i].toLowerCase() == data.toLowerCase()) {
+        if (this[i].toLowerCase() === data.toLowerCase()) {
 
             index = i;
             break;
@@ -162,7 +162,7 @@ Array.prototype.union = function () {
 .shuffle() function to shuffle the elements of array
 */
 Array.prototype.shuffle = function () {
-    for (var i = 1 ; i < this.length; i++) {
+    for (var i = 1, ln= this.length; i <ln ; i++) {
         var j = Math.floor(Math.random() *(i+1)),
         tmp = this[i];
         this[i] = this[j];
